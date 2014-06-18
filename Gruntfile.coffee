@@ -88,7 +88,6 @@ module.exports = (grunt) ->
           "qunit"
         ]
 
-  
   # These plugins provide necessary tasks.
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-concat"
@@ -96,7 +95,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-qunit"
   grunt.loadNpmTasks "grunt-contrib-jshint"
   grunt.loadNpmTasks "grunt-contrib-watch"
-  grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks "grunt-contrib-coffee"
   
   # Default task.
   grunt.registerTask "default", [
