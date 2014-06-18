@@ -43,6 +43,10 @@ throw "Expected jQuery to have been loaded before this script."  if typeof jQuer
         $quoteTarget = @.find quoteTargetSelector
         quote = $target.data "quote"
         $quoteTarget.text quote
+        $target.addClass(@options.activeClass).removeClass @options.dimmerClass
+        # find siblings
+        $siblings = $this.find("a").has("img").not("a:eq(#{$target.index()})")
+        $siblings.addClass(@options.dimmerClass).removeClass @options.activeClass
         return
       return @ # because it's chainable.
 
