@@ -1,0 +1,49 @@
+{
+  "name": "imageToggler",
+  "title": "A jQuery plugin for toggling images written in Coffeescript",
+  "description": "A jQuery Plugin written to toggle staff images in the Maxwell Forest website",
+  "version": "1.0.0",
+  "main": "imageToggler.js",
+  "homepage": "https://github.com/maxwellforest/imageToggler",
+  "author": {
+    "name": "Dave Sag",
+    "email": "davesag@gmail.com",
+    "url": "http://cv.davesag.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/davesag/maxwellforest/imageToggler.git"
+  },
+  "bugs": "https://github.com/davesag/maxwellforest/imageToggler/issues",
+  "licenses": [
+    {
+      "type": "Proprietary to Maxwell Forest"
+    }
+  ],
+  "dependencies": {
+    "jquery": "^2.1.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-coffee": "^0.10.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-qunit": "^0.4.0",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "blanket": "^1.1.6"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "build": "grunt",
+    "test": "grunt test"
+  },
+  "keywords": [
+    "jquery",
+    "coffeescript",
+    "qunit"
+  ]
+}
