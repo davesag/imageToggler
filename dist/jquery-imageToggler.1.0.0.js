@@ -1,7 +1,7 @@
 /*!
  * A jQuery plugin for toggling images written in Coffeescript - v1.0.0 - 2014-06-19
- * https://github.com/maxwellforest/imageToggler
- * Copyright (c) 2014 Dave Sag; Licensed Proprietary to Maxwell Forest
+ * https://github.com/davesag/imageToggler
+ * Copyright (c) 2014 Dave Sag; Licensed MIT
  */
 (function() {
   if (typeof jQuery !== "function") {

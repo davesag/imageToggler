@@ -35,3 +35,30 @@ Files created are:
 
 ### To Use
 
+Simply create a container such as a `div` that holds an element for your
+quote to appear in. A `q` or `blockquote`, or even a plain old `p` tag will be fine.
+
+Then create a set of `img`s wrapped in `a` tags.
+
+The `a` tags need the following data attributes
+
+  * `data-quote-target` : The selector of the element that will be injected with your quote
+  * `data-quote` : The quote to inject.  Quotes are injected using `jQuery`'s `text()` method.
+
+You should define styles for `imageToggler-bright` and `imageToggler-dim` - for example:
+
+    .imageToggler-bright {
+      -webkit-filter: drop-shadow(4px 4px 4px rgba(0,0,0,0.5));
+      -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#444')";
+      filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#444')";
+    }
+
+    .imageToggler-dim {
+      opacity:0.5;
+    }
+
+See [the example](/davesag/imageToggler/blob/master/example/example.html).
+
+### License
+
+Released under the [MIT License](/davesag/imageToggler/blob/master/LICENSE).

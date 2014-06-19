@@ -1,10 +1,10 @@
 {
   "name": "imageToggler",
   "title": "A jQuery plugin for toggling images written in Coffeescript",
-  "description": "A jQuery Plugin written to toggle staff images in the Maxwell Forest website",
+  "description": "A jQuery Plugin written to toggle staff images and inject quotes.",
   "version": "1.0.0",
   "main": "imageToggler.js",
-  "homepage": "https://github.com/maxwellforest/imageToggler",
+  "homepage": "https://github.com/davesag/imageToggler",
   "author": {
     "name": "Dave Sag",
     "email": "davesag@gmail.com",
@@ -12,12 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/davesag/maxwellforest/imageToggler.git"
+    "url": "git://github.com/davesag/imageToggler.git"
   },
-  "bugs": "https://github.com/davesag/maxwellforest/imageToggler/issues",
+  "bugs": "https://github.com/davesag/imageToggler/issues",
   "licenses": [
     {
-      "type": "Proprietary to Maxwell Forest"
+      "type": "MIT",
+      "url": "https://github.com/davesag/imageToggler/blob/master/LICENSE"
     }
   ],
   "dependencies": {
