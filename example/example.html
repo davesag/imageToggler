@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>imageToggler Example Use</title>
+  <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
+  <script src="../libs/jquery-loader.js"></script>
+  
+  <!-- boostrap is not essential but makes it nicer -->
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <!-- In your actual code you'd use the scripts in the dist/ folder. -->
+  <script src="../build/imageToggler.js"></script>
+  <style>
+  .imageToggler-bright {
+    -webkit-filter: drop-shadow(4px 4px 4px rgba(0,0,0,0.5));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#444')";
+  }
+  .imageToggler-dim {
+    opacity:0.5;
+  }
+  </style>
+</head>
+<body>
+  <div class="container staff-container">
+    <div class="jumbotron">
+      <h2>imageToggler <small>Toggles Images good!</small></h2>
+      <q class="lead staff-quote">Good business is where you find it.</q>
+    </div>
+    <div class="row">
+      <div class="media">
+        <div class="col-sm-4">
+          <a href="#" class="pull-left" title="Dick Jones" data-quote-target=".staff-quote" data-quote="I had to kill Bob Morton because he made a mistake. Now it's time to erase that mistake.">
+            <img class="media-object img-circle" height="100" width="100" src="images/dick.png">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">CEO of Omni Consumer Products</h4>
+            <p>Don't mess with this guy.</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <a href="#" class="pull-left" title="Ed 209" data-quote-target=".staff-quote" data-quote="You have fifteen seconds to comply">
+            <img class="media-object img-circle" height="100" width="100" src="images/ed209.png">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Enforcement Droid 209</h4>
+            <p>The future of law enforcement</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <a href="#" class="pull-left" title="Alex Murphy" data-quote-target=".staff-quote" data-quote="Dead or alive, you are coming with me">
+            <img class="media-object img-circle" height="100" width="100" src="images/robocop.png">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">Officer Alex Murphy</h4>
+            <p>aka Robocop</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="well" style="margin-top: 50px">
+      <p class="text-info">
+        Written by 
+        <a href="http://cv.davesag.com">Dave Sag</a>
+        for
+        <a href="http://www.maxwellforest.com">Maxwell Forest</a>.
+        Source code available at
+        <a href="https://github.com/maxwellforest/imageToggler">Github</a>
+      </p>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function(){
+      $(".staff-container").imageToggler();
+    });
+  </script>
+</body>
+</html>

@@ -17,6 +17,8 @@
   Additionally the activeClass (defined below) is applied to the targeted image,
   and the dimmerClass is allied to all sibling images.
 
+  Note: to find the siblings this plugin assumes that every image has a unique src attribute.
+
   options
   * activeClass: "imageToggler-bright"
   * dimmerClass: "imageToggler-dim"
@@ -25,6 +27,13 @@
 
 throw "Expected jQuery to have been loaded before this script."  if typeof jQuery isnt "function"
 (($) ->
+
+  uniqueSrcs = (imgs) ->
+    srcs = []
+    imgs.each ->
+      src = $(this).attr("src")
+      srcs.push src if srcs.indexOf src is -1
+    return srcs.length is imgs.length
 
   # Main jQuery Collection method.
   $.fn.imageToggler = (options) ->
@@ -35,17 +44,20 @@ throw "Expected jQuery to have been loaded before this script."  if typeof jQuer
       opts
     @each =>
       $this = $(@)
-      $links = $this.find("a").has "img"
-      $links.on @options.event, (evt) =>
+      $imgs = $this.find("a img")
+      throw "Expected all img srcs to be unique" unless uniqueSrcs $imgs
+      $imgs.on @options.event, (evt) =>
         evt.preventDefault()
         $target = $(evt.target)
-        quoteTargetSelector = $target.data "quote-target"
+        $link = $target.parent("a")
+        quoteTargetSelector = $link.data "quote-target"
         $quoteTarget = @.find quoteTargetSelector
-        quote = $target.data "quote"
+        quote = $link.data "quote"
         $quoteTarget.text quote
         $target.addClass(@options.activeClass).removeClass @options.dimmerClass
         # find siblings
-        $siblings = $this.find("a").has("img").not("a:eq(#{$target.index()})")
+        src = $target.attr("src")
+        $siblings = $this.find("a img").not("a img[src='#{src}']")
         $siblings.addClass(@options.dimmerClass).removeClass @options.activeClass
         return
       return @ # because it's chainable.

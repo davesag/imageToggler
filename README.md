@@ -33,3 +33,5 @@ Files created are:
 * `jquery-imageToggler.1.0.0.min.js` The minified version for production use.
 * `jquery-imageToggler.1.0.0.min.map` The `sourcemap` file for debugging using the minified version.
 
+### To Use
+
