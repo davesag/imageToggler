@@ -57,8 +57,8 @@ You should define styles for `imageToggler-bright` and `imageToggler-dim` - for 
       opacity:0.5;
     }
 
-See [the example](/davesag/imageToggler/blob/master/example/example.html).
+See [the example](/example/example.html).
 
 ### License
 
-Released under the [MIT License](/davesag/imageToggler/blob/master/LICENSE).
+Released under the [MIT License](//LICENSE).
