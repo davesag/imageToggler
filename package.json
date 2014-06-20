@@ -2,7 +2,7 @@
   "name": "imageToggler",
   "title": "A jQuery plugin for toggling images written in Coffeescript",
   "description": "A jQuery Plugin written to toggle staff images and inject quotes.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "imageToggler.js",
   "homepage": "https://github.com/davesag/imageToggler",
   "author": {

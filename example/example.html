@@ -14,13 +14,19 @@
   <!-- In your actual code you'd use the scripts in the dist/ folder. -->
   <script src="../build/imageToggler.js"></script>
   <style>
-  .imageToggler-bright {
+  .imageToggler-bright img {
     -webkit-filter: drop-shadow(4px 4px 4px rgba(0,0,0,0.5));
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#444')";
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#444')";
   }
   .imageToggler-dim {
     opacity:0.5;
+  }
+  .media-body {
+    padding-left: 5px;
+  }
+  .media-heading {
+    color: #345f9c;
   }
   </style>
 </head>
@@ -37,8 +43,8 @@
             <img class="media-object img-circle" height="100" width="100" src="images/dick.png">
           </a>
           <div class="media-body">
-            <h4 class="media-heading">CEO of Omni Consumer Products</h4>
-            <p>Don't mess with this guy.</p>
+            <h4 class="media-heading">Dick Jones</h4>
+            <p>CEO of Omni Consumer Products.</p>
           </div>
         </div>
         <div class="col-sm-4">
@@ -46,7 +52,7 @@
             <img class="media-object img-circle" height="100" width="100" src="images/ed209.png">
           </a>
           <div class="media-body">
-            <h4 class="media-heading">Enforcement Droid 209</h4>
+            <h4 class="media-heading">Enforcement Droid #209</h4>
             <p>The future of law enforcement</p>
           </div>
         </div>

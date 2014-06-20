@@ -14,8 +14,8 @@
 
   When the link is clicked the quote text will be injected into the quote-target as using the jquery.text() method.
 
-  Additionally the activeClass (defined below) is applied to the targeted image,
-  and the dimmerClass is allied to all sibling images.
+  Additionally the activeClass (defined below) is applied to the closest parent div above the targeted image,
+  and the dimmerClass is allied to all sibling divs.
 
   options
   * activeClass: "imageToggler-bright"
@@ -23,7 +23,6 @@
   * event:        "click"
 ###
 
-throw "Expected jQuery to have been loaded before this script."  if typeof jQuery isnt "function"
 (($) ->
 
   # Main jQuery Collection method.
@@ -44,10 +43,10 @@ throw "Expected jQuery to have been loaded before this script."  if typeof jQuer
         $quoteTarget = @.find quoteTargetSelector
         quote = $link.data "quote"
         $quoteTarget.text quote
-        $imgs.removeClass "#{@options.dimmerClass} #{@options.activeClass}"
-        $target.addClass @options.activeClass
-        $siblings = $this.find("a img").not(".#{@options.activeClass}")
-        $siblings.addClass @options.dimmerClass
+        $div = $target.closest("div")
+        $div.parent().children("div").removeClass "#{@options.dimmerClass} #{@options.activeClass}"
+        $div.addClass @options.activeClass
+        $div.siblings("div").addClass @options.dimmerClass
         return
       return @ # because it's chainable.
 

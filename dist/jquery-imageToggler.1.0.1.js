@@ -1,13 +1,9 @@
 /*!
- * A jQuery plugin for toggling images written in Coffeescript - v1.0.0 - 2014-06-20
+ * A jQuery plugin for toggling images written in Coffeescript - v1.0.1 - 2014-06-20
  * https://github.com/davesag/imageToggler
  * Copyright (c) 2014 Dave Sag; Licensed MIT
  */
 (function() {
-  if (typeof jQuery !== "function") {
-    throw "Expected jQuery to have been loaded before this script.";
-  }
-
   (function($) {
     $.fn.imageToggler = function(options) {
       var opts;
@@ -19,7 +15,7 @@
           $this = $(_this);
           $imgs = $this.find("a img");
           $imgs.on(_this.options.event, function(evt) {
-            var $link, $quoteTarget, $siblings, $target, quote, quoteTargetSelector;
+            var $div, $link, $quoteTarget, $target, quote, quoteTargetSelector;
             evt.preventDefault();
             $target = $(evt.target);
             $link = $target.parent("a");
@@ -27,10 +23,10 @@
             $quoteTarget = _this.find(quoteTargetSelector);
             quote = $link.data("quote");
             $quoteTarget.text(quote);
-            $imgs.removeClass("" + _this.options.dimmerClass + " " + _this.options.activeClass);
-            $target.addClass(_this.options.activeClass);
-            $siblings = $this.find("a img").not("." + _this.options.activeClass);
-            $siblings.addClass(_this.options.dimmerClass);
+            $div = $target.closest("div");
+            $div.parent().children("div").removeClass("" + _this.options.dimmerClass + " " + _this.options.activeClass);
+            $div.addClass(_this.options.activeClass);
+            $div.siblings("div").addClass(_this.options.dimmerClass);
           });
           return _this;
         };

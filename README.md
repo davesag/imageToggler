@@ -47,7 +47,7 @@ The `a` tags need the following data attributes
 
 You should define styles for `imageToggler-bright` and `imageToggler-dim` - for example:
 
-    .imageToggler-bright {
+    .imageToggler-bright img {
       -webkit-filter: drop-shadow(4px 4px 4px rgba(0,0,0,0.5));
       -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#444')";
       filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=4, OffY=4, Color='#444')";
@@ -56,6 +56,8 @@ You should define styles for `imageToggler-bright` and `imageToggler-dim` - for 
     .imageToggler-dim {
       opacity:0.5;
     }
+
+These styles are automatically applied to the closest parent `div` and its siblings.
 
 See [the example](/example/example.html).
 

@@ -39,10 +39,12 @@
       quoteContainer = this.elems.find ".staff-quote"
       equal quoteContainer.length, 1, "expected there to be one quoteContainer"
       equal quoteContainer.text(), "Something about staff 1", "expected the text to be injected properly"
-      equal img.hasClass("imageToggler-bright"), true, "expected img to have class imageToggler-bright"
-      equal altImg.hasClass("imageToggler-dim"), true, "expected other img to have class imageToggler-dim"
-      equal img.hasClass("imageToggler-dim"), false, "expected img not to have class imageToggler-dim"
-      equal altImg.hasClass("imageToggler-bright"), false, "expected other img not to have class imageToggler-bright"
+      div = img.closest("div")
+      altDiv = altImg.closest("div")
+      equal div.hasClass("imageToggler-bright"), true, "expected div to have class imageToggler-bright"
+      equal altDiv.hasClass("imageToggler-dim"), true, "expected altDiv to have class imageToggler-dim"
+      equal div.hasClass("imageToggler-dim"), false, "expected div not to have class imageToggler-dim"
+      equal altDiv.hasClass("imageToggler-bright"), false, "expected altDiv not to have class imageToggler-bright"
       start()
     img.click()
     expect 7
