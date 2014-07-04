@@ -6,7 +6,7 @@
   <title>imageToggler Example Use</title>
   <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
   <script src="../libs/jquery-loader.js"></script>
-  
+
   <!-- boostrap is not essential but makes it nicer -->
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -36,6 +36,7 @@
       <h2>imageToggler <small>Toggles Images good!</small></h2>
       <q class="lead staff-quote">Good business is where you find it.</q>
     </div>
+
     <div class="row">
       <div class="media">
         <div class="col-sm-4">
@@ -67,9 +68,47 @@
         </div>
       </div>
     </div>
+
+<div class="row">
+  <div class="media">
+    <div class="col-sm-4">
+      <a href="#" class="pull-left" title="Dick Jones" data-quote-target="#staff-1" data-quote="I had to kill Bob Morton because he made a mistake. Now it's time to erase that mistake.">
+        <img class="media-object img-circle" height="100" width="100" src="images/dick.png">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Dick Jones</h4>
+        <p>CEO of Omni Consumer Products.</p>
+        <p id="staff-1"></p>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <a href="#" class="pull-left" title="Ed 209" data-quote-target="#staff-2" data-quote="You have fifteen seconds to comply">
+        <img class="media-object img-circle" height="100" width="100" src="images/ed209.png">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Enforcement Droid #209</h4>
+        <p>The future of law enforcement</p>
+        <p id="staff-2"></p>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <a href="#" class="pull-left" title="Alex Murphy" data-quote-target="#staff-3" data-quote="Dead or alive, you are coming with me">
+        <img class="media-object img-circle" height="100" width="100" src="images/robocop.png">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Officer Alex Murphy</h4>
+        <p>aka Robocop</p>
+        <p id="staff-3"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div class="well" style="margin-top: 50px">
       <p class="text-info">
-        Written by 
+        Written by
         <a href="http://cv.davesag.com">Dave Sag</a>
         for
         <a href="http://www.maxwellforest.com">Maxwell Forest</a>.
@@ -80,7 +119,7 @@
   </div>
   <script>
     $(document).ready(function(){
-      $(".staff-container").imageToggler();
+      $(".staff-container").imageToggler({hideOthers: true});
     });
   </script>
 </body>

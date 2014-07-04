@@ -5,7 +5,7 @@
   <title>imageToggler Test Suite</title>
   <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
   <script src="../libs/jquery-loader.js"></script>
-  
+
   <!-- Load local QUnit. -->
   <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
   <script src="../libs/qunit/qunit.js"></script>
@@ -46,6 +46,28 @@
           <p>A bunch of stuff about staff 2</p>
         </div>
       </div>
+    </div>
+
+    <div class="hiding">
+      <div class="hiding-siblings">
+        <div>
+          <a href="#" title="staff 1" data-quote-target="#staff-1" data-quote="Something about staff 1">
+            <img src="piccy.png">
+          </a>
+          <h4>Staff 1</h4>
+          <p>A bunch of stuff about staff 1</p>
+          <p id="staff-1"></p>
+        </div>
+        <div>
+          <a href="#" title="staff 2" data-quote-target="#staff-2" data-quote="Something about staff 2">
+            <img src="piccy.png">
+          </a>
+          <h4>Staff 2</h4>
+          <p>A bunch of stuff about staff 2</p>
+          <p id="staff-2"></p>
+        </div>
+      </div>
+
     </div>
   </div>
 </body>

@@ -11,6 +11,11 @@ Assuming you have `Node.js` installed.
 npm install
 ```
 
+### Ensure Grunt is Installed
+```bash
+npm install grunt -g
+```
+
 ## To Test
 
 ```bash

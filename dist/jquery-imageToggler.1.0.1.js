@@ -1,5 +1,5 @@
 /*!
- * A jQuery plugin for toggling images written in Coffeescript - v1.0.1 - 2014-06-20
+ * A jQuery plugin for toggling images written in Coffeescript - v1.0.1 - 2014-07-04
  * https://github.com/davesag/imageToggler
  * Copyright (c) 2014 Dave Sag; Licensed MIT
  */
@@ -24,9 +24,21 @@
             quote = $link.data("quote");
             $quoteTarget.text(quote);
             $div = $target.closest("div");
-            $div.parent().children("div").removeClass("" + _this.options.dimmerClass + " " + _this.options.activeClass);
-            $div.addClass(_this.options.activeClass);
-            $div.siblings("div").addClass(_this.options.dimmerClass);
+            if (_this.options.hideOthers) {
+              $(quoteTargetSelector).show();
+              $div.siblings("div").each(function(index, sibling) {
+                var elem, quoteTarget;
+                elem = $(sibling).find("[data-quote-target]");
+                quoteTargetSelector = elem.attr("data-quote-target");
+                quoteTarget = $(sibling).find(quoteTargetSelector);
+                return quoteTarget.hide();
+              });
+              $div.show();
+            } else {
+              $div.parent().children("div").removeClass("" + _this.options.dimmerClass + " " + _this.options.activeClass);
+              $div.addClass(_this.options.activeClass);
+              $div.siblings("div").addClass(_this.options.dimmerClass);
+            }
           });
           return _this;
         };
