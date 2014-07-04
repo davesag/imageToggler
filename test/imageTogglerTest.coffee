@@ -58,14 +58,19 @@
     this.hideyElems.imageToggler {hideOthers: true}
     img = this.hideyElems.find("a img").first()
     altImg = this.hideyElems.find("a img").last()
+    quoteContainer1 = this.hideyElems.find ".staff-1"
+    quoteContainer2 = this.hideyElems.find ".staff-2"
+    equal quoteContainer1.length, 1, "expected to see current container"
+    equal quoteContainer2.length, 1, "expected to see current container"
+    equal quoteContainer1.is(":hidden"), true, "expected container to be hidden"
+    equal quoteContainer2.is(":hidden"), true, "expected other container to be hidden"
 
-    img.on "click", (evt) =>
+    img.on "click", (evt) ->
       evt.preventDefault()
-      quoteContainer = this.hideyElems.find "#staff-1"
-      equal quoteContainer.length, 1, "expected to see current container"
-      equal $("#staff-2").is(":hidden"), true, "expected other container to be hidden"
+      equal quoteContainer1.is(":hidden"), false, "expected container not to be hidden"
+      equal quoteContainer2.is(":hidden"), true, "expected other container to be hidden"
       start()
     img.click()
-    expect 2
+    expect 6
 
 ) jQuery
