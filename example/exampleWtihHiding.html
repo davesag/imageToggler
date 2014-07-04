@@ -34,41 +34,47 @@
   <div class="container staff-container">
     <div class="jumbotron">
       <h2>imageToggler <small>Toggles Images good!</small></h2>
-      <q class="lead staff-quote">Good business is where you find it.</q>
-      <a href="exampleWithHiding.html">See the quote-hiding example</a>
+      <q class="lead">Quotes are associated with each individual below.</q>
+      <a href="example.html">See the basic example</a>
     </div>
 
     <div class="row">
       <div class="media">
         <div class="col-sm-4">
-          <a href="#" class="pull-left" title="Dick Jones" data-quote-target=".staff-quote" data-quote="I had to kill Bob Morton because he made a mistake. Now it's time to erase that mistake.">
+          <a href="#" class="pull-left" title="Dick Jones" data-quote-target=".staff-1" data-quote="I had to kill Bob Morton because he made a mistake. Now it's time to erase that mistake.">
             <img class="media-object img-circle" height="100" width="100" src="images/dick.png">
           </a>
           <div class="media-body">
             <h4 class="media-heading">Dick Jones</h4>
             <p>CEO of Omni Consumer Products.</p>
+            <q class="staff-1"></q>
           </div>
         </div>
+
         <div class="col-sm-4">
-          <a href="#" class="pull-left" title="Ed 209" data-quote-target=".staff-quote" data-quote="You have fifteen seconds to comply">
+          <a href="#" class="pull-left" title="Ed 209" data-quote-target=".staff-2" data-quote="You have fifteen seconds to comply">
             <img class="media-object img-circle" height="100" width="100" src="images/ed209.png">
           </a>
           <div class="media-body">
             <h4 class="media-heading">Enforcement Droid #209</h4>
             <p>The future of law enforcement</p>
+            <q class="staff-2"></q>
           </div>
         </div>
+
         <div class="col-sm-4">
-          <a href="#" class="pull-left" title="Alex Murphy" data-quote-target=".staff-quote" data-quote="Dead or alive, you are coming with me">
+          <a href="#" class="pull-left" title="Alex Murphy" data-quote-target=".staff-3" data-quote="Dead or alive, you are coming with me">
             <img class="media-object img-circle" height="100" width="100" src="images/robocop.png">
           </a>
           <div class="media-body">
             <h4 class="media-heading">Officer Alex Murphy</h4>
             <p>aka Robocop</p>
+            <q class="staff-3"></q>
           </div>
         </div>
       </div>
     </div>
+
     <div class="well" style="margin-top: 50px">
       <p class="text-info">
         Written by
@@ -82,7 +88,7 @@
   </div>
   <script>
     $(document).ready(function(){
-      $(".staff-container").imageToggler();
+      $(".staff-container").imageToggler({hideOthers: true});
     });
   </script>
 </body>

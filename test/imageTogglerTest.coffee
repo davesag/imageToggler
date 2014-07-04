@@ -24,11 +24,10 @@
 
     setup: ->
       this.elems = $("#qunit-fixture").children(".qunit-container")
-      this.hideyElems = $("#qunit-fixture").children(".hiding")
 
-  # # all jQuery plugins must be chainable.
-  # test "is chainable", ->
-  #   strictEqual(this.elems.imageToggler(), this.elems, "should be chainable")
+  # all jQuery plugins must be chainable.
+  test "is chainable", ->
+    strictEqual(this.elems.imageToggler(), this.elems, "should be chainable")
 
   asyncTest "clicking on an image sends quote to quote container", ->
     this.elems.imageToggler()
@@ -50,14 +49,13 @@
     img.click()
     expect 7
 
-  asyncTest "with hideOthers = true, hides siblings", ->
-    $.fn.imageToggler.options =
-      activeClass: "imageToggler-bright"
-      dimmerClass: "imageToggler-dim"
-      event:        "click"
-      hideOthers:   true
+  module "hidey tests",
 
-    this.hideyElems.imageToggler()
+    setup: ->
+      this.hideyElems = $("#qunit-fixture").children(".hiding")
+
+  asyncTest "with hideOthers = true, hides siblings", ->
+    this.hideyElems.imageToggler {hideOthers: true}
     img = this.hideyElems.find("a img").first()
     altImg = this.hideyElems.find("a img").last()
 

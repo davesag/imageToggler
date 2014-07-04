@@ -39,6 +39,11 @@
     @each =>
       $this = $(@)
       $imgs = $this.find("a img")
+      # be sure and hide all the quotes if quoteHiding
+      if @options.hideOthers
+        $imgs.each (index, img) =>
+          qt = $(img).parent("a").data "quote-target"
+          $(qt).hide()
       $imgs.on @options.event, (evt) =>
         evt.preventDefault()
         $target = $(evt.target)

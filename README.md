@@ -12,8 +12,10 @@ npm install
 ```
 
 ### Ensure Grunt is Installed
+
 ```bash
-npm install grunt -g
+npm install -g grunt 
+npm install -g grunt-cli
 ```
 
 ## To Test
@@ -21,8 +23,6 @@ npm install grunt -g
 ```bash
 grunt test
 ```
-
-Note that by default this will supress any console.log output.  To get that output as well you need to add the `--debug` flag, which also generates a lot of `phantomjs` noise.
 
 ### To Build
 
@@ -34,9 +34,9 @@ This will output the final distribution files into the `dist/` folder, prefixed 
 
 Files created are:
 
-* `jquery-imageToggler.1.0.0.js` - the 'developer' version.
-* `jquery-imageToggler.1.0.0.min.js` The minified version for production use.
-* `jquery-imageToggler.1.0.0.min.map` The `sourcemap` file for debugging using the minified version.
+* `jquery-imageToggler.1.0.2.js` - the 'developer' version.
+* `jquery-imageToggler.1.0.2.min.js` The minified version for production use.
+* `jquery-imageToggler.1.0.2.min.map` The `sourcemap` file for debugging using the minified version.
 
 ### To Use
 
