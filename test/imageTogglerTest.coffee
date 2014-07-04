@@ -21,9 +21,10 @@
   ###
 
   module "basic tests",
-  
+
     setup: ->
       this.elems = $("#qunit-fixture").children(".qunit-container")
+      this.hideyElems = $("#qunit-fixture").children(".hiding")
 
   # # all jQuery plugins must be chainable.
   # test "is chainable", ->
@@ -31,8 +32,8 @@
 
   asyncTest "clicking on an image sends quote to quote container", ->
     this.elems.imageToggler()
-    img = this.elems.find("a img").first()
-    altImg = this.elems.find("a img").last()
+    img = this.elems.find(".staff-container a img").first()
+    altImg = this.elems.find(".staff-container a img").last()
     equal img.length, 1, "expected there to be one image"
     img.on "click", (evt) =>
       evt.preventDefault()
@@ -48,5 +49,25 @@
       start()
     img.click()
     expect 7
+
+  asyncTest "with hideOthers = true, hides siblings", ->
+    $.fn.imageToggler.options =
+      activeClass: "imageToggler-bright"
+      dimmerClass: "imageToggler-dim"
+      event:        "click"
+      hideOthers:   true
+
+    this.hideyElems.imageToggler()
+    img = this.hideyElems.find("a img").first()
+    altImg = this.hideyElems.find("a img").last()
+
+    img.on "click", (evt) =>
+      evt.preventDefault()
+      quoteContainer = this.hideyElems.find "#staff-1"
+      equal quoteContainer.length, 1, "expected to see current container"
+      equal $("#staff-2").is(":hidden"), true, "expected other container to be hidden"
+      start()
+    img.click()
+    expect 2
 
 ) jQuery
