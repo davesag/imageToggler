@@ -48,9 +48,8 @@
         quote = $link.data "quote"
         $quoteTarget.text quote
         $div = $target.closest("div")
-        $div.parent().children("div").removeClass "#{@options.dimmerClass} #{@options.activeClass}"
-        $div.addClass @options.activeClass
         if @options.hideOthers
+          $(quoteTargetSelector).show()
           $div.siblings("div").each (index, sibling) ->
             elem = $(sibling).find("[data-quote-target]")
             quoteTargetSelector = elem.attr("data-quote-target")
@@ -58,6 +57,8 @@
             quoteTarget.hide()
           $div.show()
         else
+          $div.parent().children("div").removeClass "#{@options.dimmerClass} #{@options.activeClass}"
+          $div.addClass @options.activeClass
           $div.siblings("div").addClass @options.dimmerClass
         return
       return @ # because it's chainable.
