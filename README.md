@@ -13,7 +13,7 @@ npm install
 
 ### Ensure Grunt is Installed
 ```bash
-npm install grunt
+npm install grunt -g
 ```
 
 ## To Test
