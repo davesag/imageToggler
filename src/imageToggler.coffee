@@ -21,6 +21,10 @@
   * activeClass: "imageToggler-bright"
   * dimmerClass: "imageToggler-dim"
   * event:        "click"
+  * hideOthers:   false
+
+  By default, the other sibling targets are not hidden when a new one is clicked
+  on. If you want them to be hidden set `hideOthers` to **true**
 ###
 
 (($) ->
@@ -46,7 +50,15 @@
         $div = $target.closest("div")
         $div.parent().children("div").removeClass "#{@options.dimmerClass} #{@options.activeClass}"
         $div.addClass @options.activeClass
-        $div.siblings("div").addClass @options.dimmerClass
+        if @options.hideOthers
+          $div.siblings("div").each (index, sibling) ->
+            elem = $(sibling).find("[data-quote-target]")
+            quoteTargetSelector = elem.attr("data-quote-target")
+            quoteTarget = $(sibling).find quoteTargetSelector
+            quoteTarget.hide()
+          $div.show()
+        else
+          $div.siblings("div").addClass @options.dimmerClass
         return
       return @ # because it's chainable.
 
